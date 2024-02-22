@@ -8,8 +8,10 @@ public class UiController : MonoBehaviour
 {
     public TMP_Text txtScore,txtHighscore;
     public Image[] imgLives;
+   
     public Button btnPause,btnResume,btnMainMenu,btnClosePauseMenu,btnSounds;
     public GameObject panelGame,panelPause;
+     public Image heart;
     void Start()
     {
         panelGame.gameObject.SetActive(true);
