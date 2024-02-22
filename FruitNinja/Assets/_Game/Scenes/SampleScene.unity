@@ -199,6 +199,69 @@ Transform:
   - {fileID: 831167752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &449509975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449509977}
+  - component: {fileID: 449509976}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &449509976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449509975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb226471ca1b6f44492306b5fc2fd2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splash: {fileID: 5904091164274120399, guid: 79d1181c1a3a50d40865a8495c4efc43, type: 3}
+  appleColor:
+    serializedVersion: 2
+    rgba: 4278458527
+  melanciaColor:
+    serializedVersion: 2
+    rgba: 4278458527
+  coconutColor:
+    serializedVersion: 2
+    rgba: 4280894315
+  orangeColor:
+    serializedVersion: 2
+    rgba: 4279076095
+  pineappleColor:
+    serializedVersion: 2
+    rgba: 4279591100
+  pearColor:
+    serializedVersion: 2
+    rgba: 4278237872
+--- !u!4 &449509977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449509975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,3 +754,4 @@ SceneRoots:
   - {fileID: 448308826}
   - {fileID: 1118368864}
   - {fileID: 935481415}
+  - {fileID: 449509977}
