@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -22,7 +23,11 @@ public class GameController : MonoBehaviour
         
     }
     public void StartGame(){
-        uiController.txtScore.text = "Pontuação: "+ score;
+        uiController.txtScore.text = "Pontuação: "+ score.ToString();
 
+    }
+    public void UpdateScore(int points){
+        score+=points;
+        uiController.txtScore.text="Pontuação: "+score.ToString();
     }
 }
