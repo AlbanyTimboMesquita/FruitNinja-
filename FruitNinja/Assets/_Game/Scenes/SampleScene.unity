@@ -554,9 +554,15 @@ MonoBehaviour:
   uiYellowColor:
     serializedVersion: 2
     rgba: 4278255615
+  uiGreenwColor:
+    serializedVersion: 2
+    rgba: 4278255360
   score: 0
   fruitCount: 0
   fruitCountEven: 0
+  fruitSpawner: {fileID: 1118368862}
+  blade: {fileID: 935481411}
+  destroyer: {fileID: 2062148257}
 --- !u!4 &449509977
 Transform:
   m_ObjectHideFlags: 0
@@ -2190,6 +2196,7 @@ MonoBehaviour:
   btnSounds: {fileID: 957684394}
   panelGame: {fileID: 122357611}
   panelPause: {fileID: 2013406749}
+  panelGameover: {fileID: 2147483043}
   heart: {fileID: 452137220}
 --- !u!4 &1106387356
 Transform:
@@ -2361,7 +2368,7 @@ GameObject:
   - component: {fileID: 1318132873}
   - component: {fileID: 1318132872}
   m_Layer: 5
-  m_Name: ButtonResume
+  m_Name: ButtonRestart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2433,7 +2440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1106387355}
         m_TargetAssemblyTypeName: UiController, Assembly-CSharp
-        m_MethodName: ButtonClosePanelPause
+        m_MethodName: ButtonRestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3753,7 +3760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2147483044
 RectTransform:
   m_ObjectHideFlags: 0
