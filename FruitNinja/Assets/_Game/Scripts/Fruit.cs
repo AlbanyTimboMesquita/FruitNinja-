@@ -22,7 +22,7 @@ public class Fruit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+      Rotate();
     }
     private void ApplyForce(){
          myRB.AddForce(transform.up*startForce,ForceMode2D.Impulse); 
@@ -54,5 +54,9 @@ public class Fruit : MonoBehaviour
 
         }
         return defaultColor;
+    }
+
+      private void Rotate(){
+        transform.Rotate(new Vector3(0f,150,0f) * Time.deltaTime);
     }
 }
