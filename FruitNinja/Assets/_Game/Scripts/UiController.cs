@@ -49,4 +49,18 @@ public class UiController : MonoBehaviour
         panelGame.gameObject.SetActive(false);
         gameController.GameOver();
     }
+    public void ButtonRestartGame(){
+        panelGame.gameObject.SetActive(true);
+        panelPause.gameObject.SetActive(false);
+        panelGameover.gameObject.SetActive(false);
+        gameController.RestartGame();
+
+        for (int i = 0; i < imgLives.Length; i++)
+        {
+            imgLives[i].color=gameController.uiGreenwColor;
+        }
+        heart.color=gameController.uiGreenwColor;
+       
+    }
+
 }
