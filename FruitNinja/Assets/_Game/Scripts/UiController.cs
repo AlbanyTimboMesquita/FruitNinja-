@@ -10,12 +10,14 @@ public class UiController : MonoBehaviour
     public Image[] imgLives;
    
     public Button btnPause,btnResume,btnMainMenu,btnClosePauseMenu,btnSounds;
-    public GameObject panelGame,panelPause;
-     public Image heart;
+    public GameObject panelGame,panelPause,panelGameover;
+    public Image heart;
+    private GameController gameController;
     void Start()
     {
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
+        gameController =  FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -33,5 +35,18 @@ public class UiController : MonoBehaviour
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
         Time.timeScale=1f;//despausando o jogo
+    }
+
+    public IEnumerator ShowBombPanelGameover(){
+        gameController.GameOver();
+        panelGame.gameObject.SetActive(false);
+        panelGameover.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        
+    }
+    public void ShowPanelGameover(){
+        panelGameover.gameObject.SetActive(true);
+        panelGame.gameObject.SetActive(false);
+        gameController.GameOver();
     }
 }

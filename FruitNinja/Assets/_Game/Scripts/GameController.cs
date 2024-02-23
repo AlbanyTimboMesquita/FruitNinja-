@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     uiYellowColor = new Color32(255,255,0,255);
     [HideInInspector]public int score,fruitCount,fruitCountEven;
     private UiController uiController;
+    [SerializeField] private GameObject fruitSpawner, blade, destroyer;
     void Start()
     {
         uiController =  FindObjectOfType<UiController>();
@@ -31,5 +32,12 @@ public class GameController : MonoBehaviour
     public void UpdateScore(int points){
         score+=points;
         uiController.txtScore.text="Pontuação: "+score.ToString();
+    }
+
+    public void GameOver(){
+        fruitSpawner.gameObject.SetActive(false);
+        destroyer.gameObject.SetActive(false);
+        blade.gameObject.SetActive(false);
+
     }
 }

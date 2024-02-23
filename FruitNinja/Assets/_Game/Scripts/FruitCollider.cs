@@ -44,7 +44,8 @@ private void OnTriggerEnter2D(Collider2D target) {
                     return;
                     case(3):
                     uiController.heart.color=gameController.uiRedColor;
-                    Debug.Log("Perdeu");
+                    //Fim de jogo
+                    uiController.ShowPanelGameover();
                     return;
                 }
            
