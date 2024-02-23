@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    // Start is called before the first frame update
+    private Rigidbody2D myRB;
+    [SerializeField] private float speed,startForce;
+    [SerializeField] private GameObject beamLight;
+ 
     void Start()
     {
-        
+        myRB = this.gameObject.GetComponent<Rigidbody2D>();
+        ApplyForce();
     }
 
     // Update is called once per frame
@@ -19,4 +22,18 @@ public class Bomb : MonoBehaviour
     private void Rotate(){
         transform.Rotate(new Vector3(0f,speed,0f) * Time.deltaTime);
     }
+    public void BombGameOver(){
+        speed=0f;
+        myRB.bodyType = RigidbodyType2D.Kinematic;
+        myRB.simulated = false;
+
+        CircleCollider2D myCollider = this.gameObject.GetComponent<CircleCollider2D>();
+        myCollider.enabled=false;
+        GameObject tempBeamLight = Instantiate(beamLight, this.transform.position, Quaternion.identity) as GameObject;
+    }
+
+    private void ApplyForce(){
+         myRB.AddForce(transform.up*startForce,ForceMode2D.Impulse); 
+    }
+
 }

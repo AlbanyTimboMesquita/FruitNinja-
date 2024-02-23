@@ -188,7 +188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -88.00012, y: -25}
+  m_AnchoredPosition: {x: -88, y: -25}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &81921171
@@ -606,7 +606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.000122, y: -25}
+  m_AnchoredPosition: {x: -14, y: -25}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &452137220
@@ -2042,6 +2042,7 @@ MonoBehaviour:
   - {fileID: 4502640061722113275, guid: 37fe5b6df8af4e94f9041125bebf3b4b, type: 3}
   - {fileID: 6650587292149681131, guid: 8aff7a21f14560b4baaac50d85452ac2, type: 3}
   - {fileID: 4557101983857894652, guid: 27c25cae533c9674ba6ec6278811e58a, type: 3}
+  - {fileID: 2255475124454414064, guid: 7c90741fcd5513644b6c865842cc0811, type: 3}
   spawnPoints:
   - {fileID: 63887337}
   - {fileID: 2075774915}
