@@ -21,12 +21,12 @@ private void OnTriggerEnter2D(Collider2D target) {
         //inicio audio aleatorio blade
         target.gameObject.GetComponent<AudioSource>().clip = audioController.bladeAudio[Random.Range(0,audioController.bladeAudio.Length)];
         target.gameObject.GetComponent<AudioSource>().Play();
-        //fim audio aleatorio blade
+        //fim audio aleatorio blade 
         GameObject tempFruitSliced = Instantiate(fruit.fruitSliced, transform.position, Quaternion.identity);
-/*         //inicio audio aleatorio fruta splash
+        //inicio audio aleatorio fruta splash
         tempFruitSliced.gameObject.GetComponent<AudioSource>().clip = audioController.fruitSplashAudio[Random.Range(0, audioController.fruitSplashAudio.Length)];
         tempFruitSliced.gameObject.GetComponent<AudioSource>().Play();
-        //fim audio aleatorio fruta splash   Não quer funcionar      */
+        //fim audio aleatorio fruta splash   Não quer funcionar     
         GameObject tempSplash =Instantiate(gameController.splash,tempFruitSliced.transform.position,Quaternion.identity);
         tempSplash.GetComponentInChildren<SpriteRenderer>().color = fruit.ChangeSplashColor(this.gameObject);
 

@@ -11,14 +11,17 @@ public class Blade : MonoBehaviour
    private Vector2 previousPosition;
    [SerializeField] private float minCuttingVelocity=0.0001f;
 
+
    private void Awake() {
     trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
     circleCollider =  this.gameObject.GetComponent<CircleCollider2D>();
+   
    }
     void Start()
     {
         trailRenderer.enabled = false;
         circleCollider.enabled =  false;
+
         
     }
 
@@ -63,4 +66,5 @@ public class Blade : MonoBehaviour
 
        previousPosition=newPosition;
     }
+
 }
