@@ -12,10 +12,14 @@ public class GameController : MonoBehaviour
     uiYellowColor = new Color32(255,255,0,255),uiGreenwColor = new Color32(0,255,0,255);
     [HideInInspector]public int score,fruitCount,fruitCountEven;
     private UiController uiController;
+    private int highscore;
+    private GameData gamedata;
     [SerializeField] private GameObject fruitSpawner, blade, destroyer;
     void Start()
     {
         uiController =  FindObjectOfType<UiController>();
+        gamedata = FindObjectOfType<GameData>();
+        highscore=gamedata.GetScore();
         score=0;
         fruitCount=0;
     }
@@ -38,6 +42,9 @@ public class GameController : MonoBehaviour
         fruitSpawner.gameObject.SetActive(false);
         destroyer.gameObject.SetActive(false);
         blade.gameObject.SetActive(false);
+        if(score>highscore){
+            gamedata.SaveScore(score);
+        }
 
     }
 

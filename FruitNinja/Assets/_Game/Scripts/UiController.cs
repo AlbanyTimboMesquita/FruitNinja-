@@ -13,11 +13,14 @@ public class UiController : MonoBehaviour
     public GameObject panelGame,panelPause,panelGameover;
     public Image heart;
     private GameController gameController;
+    private GameData gameData;
     void Start()
     {
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
         gameController =  FindObjectOfType<GameController>();
+        gameData = FindObjectOfType<GameData>();
+        txtHighscore.text = "Maior Pontuação: "+gameData.GetScore().ToString();        
     }
 
     // Update is called once per frame
@@ -42,12 +45,14 @@ public class UiController : MonoBehaviour
         panelGame.gameObject.SetActive(false);
         panelGameover.gameObject.SetActive(true);
         yield return new WaitForSeconds(3f);
+        txtHighscore.text = "Maior Pontuação: "+gameData.GetScore().ToString();    
         
     }
     public void ShowPanelGameover(){
         panelGameover.gameObject.SetActive(true);
         panelGame.gameObject.SetActive(false);
         gameController.GameOver();
+        txtHighscore.text = "Maior Pontuação: "+gameData.GetScore().ToString();    
     }
     public void ButtonRestartGame(){
         panelGame.gameObject.SetActive(true);
