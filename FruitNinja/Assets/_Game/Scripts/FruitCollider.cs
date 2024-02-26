@@ -22,12 +22,14 @@ private void OnTriggerEnter2D(Collider2D target) {
         target.gameObject.GetComponent<AudioSource>().clip = audioController.bladeAudio[Random.Range(0,audioController.bladeAudio.Length)];
         target.gameObject.GetComponent<AudioSource>().Play();
         //fim audio aleatorio blade 
-        GameObject tempFruitSliced = Instantiate(fruit.fruitSliced, transform.position, Quaternion.identity);
+        GameObject tempFruitSliced = Instantiate(fruit.fruitSliced, transform.position, Quaternion.identity);//criando fruta cortada
+        tempFruitSliced.transform.parent = gameController.allSlicedFruits;//organizando frutas cortadas  na cena
         //inicio audio aleatorio fruta splash
         tempFruitSliced.gameObject.GetComponent<AudioSource>().clip = audioController.fruitSplashAudio[Random.Range(0, audioController.fruitSplashAudio.Length)];
         tempFruitSliced.gameObject.GetComponent<AudioSource>().Play();
         //fim audio aleatorio fruta splash   Não quer funcionar     
-        GameObject tempSplash =Instantiate(gameController.splash,tempFruitSliced.transform.position,Quaternion.identity);
+        GameObject tempSplash =Instantiate(gameController.splash,new Vector3(tempFruitSliced.transform.position.x,tempFruitSliced.transform.position.y,10f),Quaternion.identity);
+        tempSplash.transform.parent = gameController.allSplashes;//organizando splashes na cena
         tempSplash.GetComponentInChildren<SpriteRenderer>().color = fruit.ChangeSplashColor(this.gameObject);
 
 
@@ -38,7 +40,7 @@ private void OnTriggerEnter2D(Collider2D target) {
         tempFruitSliced.transform.GetChild(1).gameObject.GetComponent<Rigidbody>().AddForce(tempFruitSliced.transform.GetChild(1).transform.right*Random.Range(5f,10f),ForceMode.Impulse);
 
 
-        Destroy(tempSplash, 5f);
+        Destroy(tempSplash, 3f);
         Destroy(tempFruitSliced, 5f);
         Destroy(this.gameObject);
 

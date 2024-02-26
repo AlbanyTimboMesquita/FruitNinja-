@@ -13,7 +13,7 @@ public class BombCollider : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.CompareTag("Blade")){
             bomb.BombGameOver();
-            StartCoroutine(uiController.ShowBombPanelGameover());
+            uiController.ShowBombPanelGameover();
 
         }
     }
